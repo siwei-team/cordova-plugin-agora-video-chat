@@ -29,7 +29,8 @@
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     RoomViewController *main = [storyboard instantiateViewControllerWithIdentifier:@"roomViewController"];
-    main.roomName = @"nxyt_0007";
+    //main.roomName = @"nxyt_0007";
+    main.roomName = [[command arguments] objectAtIndex:0];
     main.videoProfile = AgoraRtc_VideoProfile_360P;
     main.delegate = self;
 
