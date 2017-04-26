@@ -29,10 +29,23 @@
     <source-file src="src/iOS/Chat/AGDChatViewController.m" target-dir=""/>
     <header-file src="src/iOS/Chat/AGDChatCell.h" target-dir=""/>
     <source-file src="src/iOS/Chat/AGDChatCell.m" target-dir=""/>
+    <header-file src="src/iOS/Chat/RoomViewController.h" target-dir=""/>
+    <source-file src="src/iOS/Chat/RoomViewController.m" target-dir=""/>
+    <header-file src="src/iOS/Chat/VideoSession.h" target-dir=""/>
+    <source-file src="src/iOS/Chat/VideoSession.m" target-dir=""/>
+    <header-file src="src/iOS/Chat/VideoView.h" target-dir=""/>
+    <source-file src="src/iOS/Chat/VideoView.m" target-dir=""/>
+    <header-file src="src/iOS/Chat/KeyCenter.h" target-dir=""/>
+    <source-file src="src/iOS/Chat/KeyCenter.m" target-dir=""/>
+    <header-file src="src/iOS/Chat/VideoViewLayouter.h" target-dir=""/>
+    <source-file src="src/iOS/Chat/VideoViewLayouter.m" target-dir=""/>
     <framework src="src/iOS/lib/AgoraRtcEngineKit.framework" custom="true"/>
+    <framework src="src/iOS/lib/AgoraRtcCryptoLoader.framework" custom="true"/>
     <source-file src="src/iOS/lib/Crasheye/libCrasheye.a" framework="true"/>
+    <source-file src="src/iOS/lib/libcrypto.a" framework="true"/>
     <header-file src="src/iOS/lib/Crasheye/Crasheye.h" target-dir=""/>
     <resource-file src="src/iOS/ChatView.storyboard" target-dir=""/>
+    <resource-file src="src/iOS/Main.storyboard" target-dir=""/>
     <resource-file src="src/iOS/Images.xcassets" target-dir=""/>
     <framework src="AudioToolbox.framework"></framework>
     <framework src="VideoToolbox.framework"></framework>

@@ -1,5 +1,6 @@
 #import "Agora.h"
 #import "AGDChatViewController.h"
+#import "RoomViewController.h"
 
 @implementation AgoraPlugin
 
@@ -26,15 +27,23 @@
 
 - (void)joinChannelImplementation:(CDVInvokedUrlCommand*)command mode: (BOOL) is_lecture_mode uid:(int) uid
 {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ChatView" bundle:nil];
-    AGDChatViewController* chat = (AGDChatViewController*)[sb instantiateViewControllerWithIdentifier:@"ChatViewController"];
-    [chat setKey: _key];
-    [chat setChn:[[command arguments] objectAtIndex:0]];
-    [chat setCallback:__completionHandler];
-    [chat setLecture:is_lecture_mode];
-    [chat setUid:uid];
-    _chat_instance = chat;
-    [self.viewController presentViewController:chat animated:YES completion:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    RoomViewController *main = [storyboard instantiateViewControllerWithIdentifier:@"roomViewController"];
+    main.roomName = @"nxyt_0007";
+    main.videoProfile = AgoraRtc_VideoProfile_360P;
+    main.delegate = self;
+
+    [self.viewController presentViewController:main animated:YES completion:nil];
+
+    // UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    // AGDChatViewController* chat = (AGDChatViewController*)[sb instantiateViewControllerWithIdentifier:@"roomViewController"];
+    // [chat setKey: _key];
+    // [chat setChn:[[command arguments] objectAtIndex:0]];
+    // [chat setCallback:__completionHandler];
+    // [chat setLecture:is_lecture_mode];
+    // [chat setUid:uid];
+    // _chat_instance = chat;
+    // [self.viewController presentViewController:chat animated:YES completion:nil];
 }
 
 -(void) joinChannel:(CDVInvokedUrlCommand *)command

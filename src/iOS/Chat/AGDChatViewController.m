@@ -134,7 +134,7 @@
 - (void)initAgoraKit
 {
     // use test key
-    self.agoraKit = [AgoraRtcEngineKit sharedEngineWithVendorKey:self.vendorKey delegate:self];
+    self.agoraKit = [AgoraRtcEngineKit sharedEngineWithAppId:self.vendorKey delegate:self];
     
     //    self.agoraKit = [[AgoraRtcEngineKit alloc] initWithVendorKey:self.vendorKey error:^(AgoraRtcErrorCode errorCode) {
     //        if (errorCode == AgoraRtc_Error_InvalidVendorKey) {
@@ -296,7 +296,7 @@
 - (void)rtcEngine:(AgoraRtcEngineKit *)engine didOccurError:(AgoraRtcErrorCode)errorCode
 {
     __weak __typeof(self) weakSelf = self;
-    if (errorCode == AgoraRtc_Error_InvalidVendorKey) {
+    if (errorCode == AgoraRtc_Error_InvalidAppId) {
         [weakSelf.agoraKit leaveChannel:nil];
         [weakSelf.errorKeyAlert show];
     }
