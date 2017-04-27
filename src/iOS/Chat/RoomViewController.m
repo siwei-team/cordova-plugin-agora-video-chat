@@ -246,6 +246,7 @@
     if ([self.delegate respondsToSelector:@selector(roomVCNeedClose:)]) {
         [self.delegate roomVCNeedClose:self];
     }
+    [self dismissViewControllerAnimated:true completion:Nil];
 }
 
 //MARK: - Agora Media SDK
